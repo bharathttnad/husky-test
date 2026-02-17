@@ -27,6 +27,10 @@ app.get("/products", (_req, res) => {
   res.json(products);
 });
 
+app.get('/ping', (_req, res) => {
+  res.json({ pong: true });
+});
+
 const port = process.env.PORT ? Number(process.env.PORT) : 3000;
 app.listen(port, () => {
   process.stdout.write(`server listening on http://localhost:${port}\n`);
